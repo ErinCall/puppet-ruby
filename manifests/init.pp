@@ -18,6 +18,10 @@ class ruby(
 
   if $::osfamily == 'Darwin' {
     boxen::env_script { 'ruby':
+      content  => template('ruby/ruby.fish'),
+      priority => 'higher',
+    }
+    boxen::env_script { 'ruby':
       content  => template('ruby/ruby.sh'),
       priority => 'higher',
     }
