@@ -18,7 +18,7 @@ class ruby(
 
   if $::osfamily == 'Darwin' {
     boxen::env_script { 'ruby-fish':
-      content  => template('ruby/ruby.fish'),
+      content  => template('ruby/ruby.fish.erb'),
       priority => 'higher',
     }
     boxen::env_script { 'ruby':
