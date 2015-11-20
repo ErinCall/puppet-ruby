@@ -17,7 +17,7 @@ class ruby(
   include $provider_class
 
   if $::osfamily == 'Darwin' {
-    boxen::env_script { 'ruby':
+    boxen::env_script { 'ruby-fish':
       content  => template('ruby/ruby.fish'),
       priority => 'higher',
     }
