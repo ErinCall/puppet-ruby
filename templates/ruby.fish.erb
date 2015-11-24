@@ -10,7 +10,7 @@ set -gx RBENV_ROOT <%= scope.lookupvar("::ruby::rbenv::prefix") %>
 set -gx PATH $RBENV_ROOT/bin $PATH
 
 # Load rbenv
-eval (rbenv init -)
+source (rbenv init - | psub)
 
 # Helper for shell prompts and the like
 alias current_ruby 'rbenv version-name'
