@@ -13,9 +13,7 @@ set -gx PATH $RBENV_ROOT/bin $PATH
 eval (rbenv init -)
 
 # Helper for shell prompts and the like
-current_ruby() {
-  echo (rbenv version-name)
-}
+alias current_ruby 'rbenv version-name'
 <%- end -%>
 
 # ruby.sh has chruby here but it's not supported for Fish!
