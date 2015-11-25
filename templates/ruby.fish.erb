@@ -2,7 +2,7 @@
 set -gx PATH <%= scope.lookupvar("::ruby::build::prefix") %>/bin $PATH
 
 # Allow bundler to use all the cores for parallel installation
-set -gx BUNDLE_JOBS=<%= scope.lookupvar("::processorcount") %>
+set -gx BUNDLE_JOBS <%= scope.lookupvar("::processorcount") %>
 
 <%- if scope.lookupvar("::ruby::provider") == "rbenv" -%>
 # Configure RBENV_ROOT and put RBENV_ROOT/bin on PATH
